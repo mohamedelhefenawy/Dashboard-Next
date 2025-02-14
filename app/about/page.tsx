@@ -2,6 +2,7 @@
 import React from 'react'
 import { SubmitHandler, useForm } from "react-hook-form";
 import { TextField,  Button } from "@mui/material";
+import {motion} from "framer-motion";
 
 
 interface Forms {
@@ -29,9 +30,12 @@ export default function Page() {
   };
 
   return (
-    <form
+    <motion.form
       onSubmit={handleSubmit(onSubmit)}
       className="bg-white rounded-xl mx-auto my-10 shadow-xl p-6 md:p-8 w-full space-y-5"
+      initial={{opacity:0,y:50,scale:0.2,rotateX:-360}}
+      animate={{opacity:1,y:0,scale:1,rotateX:0}}
+      transition={{duration:1,ease:'linear'}}
     >
       <h1 className="text-3xl font-semibold text-cyan-600 text-center">
         About Edit
@@ -70,7 +74,7 @@ export default function Page() {
       <Button type="submit" variant="contained" className="w-full py-2 rounded-xl">
         Submit
       </Button>
-    </form>
+    </motion.form>
   );
 }
 
