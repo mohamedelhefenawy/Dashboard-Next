@@ -70,9 +70,9 @@ export default function Forming({title_form,button_form}:props) {
   return (
 
         <motion.form
-        initial={{ opacity: 0, scale: 0.8, rotateX: -10 }}
-        animate={{ opacity: 1, scale: 1, rotateX: 0 }}
-        transition={{ duration: 0.7, ease: "easeOut", type: "spring", stiffness: 100 }}
+        initial={{opacity:0,y:50,scale:0.2}}
+        animate={{opacity:1,y:0,scale:1}}
+        transition={{duration:1,ease:'linear'}}
       onSubmit={handleSubmit(onSubmit)}
       className="bg-white rounded-xl mx-auto my-10 shadow-xl p-6 md:p-8 w-full space-y-5"
     >
